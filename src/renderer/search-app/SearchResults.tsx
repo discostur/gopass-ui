@@ -66,7 +66,7 @@ export default function SearchResults(props: SearchResultsProps) {
                 }
                 break
 
-            case 'enter':
+            case 'enter': {
                 const secretKey = filteredSecretNames[selectedItemIndex]
                 if (secretKey) {
                     copySecretToClipboard(secretKey)
@@ -74,6 +74,7 @@ export default function SearchResults(props: SearchResultsProps) {
 
                 event.preventDefault()
                 break
+            }
 
             case 'esc':
                 ipcRenderer.send('hideSearchWindow')
