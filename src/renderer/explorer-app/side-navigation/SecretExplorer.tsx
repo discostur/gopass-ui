@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as m from 'react-materialize'
-import * as KeyboardEventHandler from 'react-keyboard-event-handler'
+import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import { useNavigate } from 'react-router-dom'
 import SecretTree from './SecretTree'

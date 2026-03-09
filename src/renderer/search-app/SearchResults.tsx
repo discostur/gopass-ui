@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ipcRenderer } from 'electron'
 import * as m from 'react-materialize'
-import * as KeyboardEventHandler from 'react-keyboard-event-handler'
+import KeyboardEventHandler from 'react-keyboard-event-handler'
 
 import Gopass from '../secrets/Gopass'
 import { useCopySecretToClipboard } from '../secrets/useCopySecretToClipboard'
