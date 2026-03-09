@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Event, globalShortcut, ipcMain, IpcMainEvent, Tray, session } from 'electron'
 import { URL } from 'url'
 import * as path from 'path'
-import * as fixPath from 'fix-path'
+import fixPath from 'fix-path'
 import electronSettings from 'electron-settings'
 
 import { SystemSettings, UserSettings } from '../shared/settings'

@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const spawn = require('child_process').spawn
 
@@ -18,9 +17,6 @@ module.exports = merge(baseConfig, {
             }
         ]
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
     devServer: {
         port: 2003,
         compress: true,
@@ -30,7 +26,7 @@ module.exports = merge(baseConfig, {
             verbose: true,
             disableDotRule: false
         },
-        onBeforeSetupMiddleware() {
+        setupMiddlewares(middlewares) {
             if (process.env.START_HOT) {
                 console.log('Starting main process');
                 spawn('npm', ['run', 'start-main-dev'], {
@@ -41,6 +37,7 @@ module.exports = merge(baseConfig, {
                     .on('close', code => process.exit(code))
                     .on('error', spawnError => console.error(spawnError));
             }
+            return middlewares;
         }
     }
 })
